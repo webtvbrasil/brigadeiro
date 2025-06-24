@@ -570,7 +570,7 @@
     // Toca o som
     const som = document.getElementById("notificacao-som");
     if (som) {
-        som.volume = 0.3;  // Volume entre 0 (mudo) e 1 (máximo)
+        som.volume = 1;  // Volume entre 0 (mudo) e 1 (máximo)
         som.currentTime = 0;
         som.play().catch(() => {
             // alguns navegadores exigem interação do usuário antes de tocar som
