@@ -289,7 +289,16 @@
             .gallery-control { display: none; } /* Esconde setas no mobile, o scroll é touch */
             .benefit-item { flex-direction: column; text-align: center; }
         }
+    
     </style>
+    <style>
+    #youtubeModal div {
+        border: 5px solid #3498db; /* Moldura azul elegante */
+    }
+    #closeModal:hover {
+        color: red;
+    }
+</style>
 </head>
 
 <body>
@@ -367,12 +376,12 @@
         <div class="video-gallery-wrapper">
              <div class="video-gallery-container">
                 <div class="video-gallery" id="video-gallery">
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_1"><img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Dica de Embalagem"></div>
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_2"><img src="https://i.ytimg.com/vi/3tmd-ClpJxA/hqdefault.jpg" alt="Receita Rápida"></div>
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_3"><img src="https://i.ytimg.com/vi/J---aiyznGQ/hqdefault.jpg" alt="Como Precificar"></div>
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_4"><img src="https://i.ytimg.com/vi/6-d2N3M3p1M/hqdefault.jpg" alt="Divulgação Eficaz"></div>
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_5"><img src="https://i.ytimg.com/vi/n4t2-jI5S9Q/hqdefault.jpg" alt="Dicas de Vendas"></div>
-                    <div class="video-thumbnail" data-video-id="VIDEO_ID_6"><img src="https://i.ytimg.com/vi/sB6HY8r9g1g/hqdefault.jpg" alt="Bônus Surpresa"></div>
+                    <div class="video-thumbnail" data-video-id="dGESq9_CxVU"><img src="https://i.ytimg.com/vi/dGESq9_CxVU/hqdefault.jpg" alt="Dica de Embalagem"></div>
+                    <div class="video-thumbnail" data-video-id="83owhimQRg8"><img src="https://i.ytimg.com/vi/83owhimQRg8/hqdefault.jpg" alt="Receita Rápida"></div>
+                    <div class="video-thumbnail" data-video-id="thINjhofAxI"><img src="https://i.ytimg.com/vi/thINjhofAxI/hqdefault.jpg" alt="Como Precificar"></div>
+                    <div class="video-thumbnail" data-video-id="43zn44zfnU0"><img src="https://i.ytimg.com/vi/43zn44zfnU0/hqdefault.jpg" alt="Divulgação Eficaz"></div>
+                    <div class="video-thumbnail" data-video-id="CxFUAhOAyT8"><img src="https://i.ytimg.com/vi/CxFUAhOAyT8/hqdefault.jpg" alt="Dicas de Vendas"></div>
+                    <div class="video-thumbnail" data-video-id="TeiJcx_A344"><img src="https://i.ytimg.com/vi/TeiJcx_A344/hqdefault.jpg" alt="Bônus Surpresa"></div>
                 </div>
              </div>
              <button class="gallery-control left"><i class="material-icons">chevron_left</i></button>
@@ -453,6 +462,16 @@
     <footer>Aviso Legal: Este site não é afiliado, endossado ou patrocinado pelo Facebook™ ou Meta Platforms Inc. O Facebook™ é uma marca registrada de Meta Platforms, Inc. Todas as informações, conteúdos e ofertas presentes neste site são de responsabilidade exclusiva da nossa equipe e empresa. Não estamos vinculados de nenhuma forma a Meta, Facebook™, Instagram™ ou qualquer outra plataforma pertencente à Meta Platforms Inc.</footer>
     <div class="sale-notification">...</div>
 
+    <!-- Modal para vídeo -->
+<div id="youtubeModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;">
+    <div style="position:relative; max-width:800px; width:90%; background:white; border-radius:12px; overflow:hidden; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <span id="closeModal" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; color:#333;">&times;</span>
+        <div style="position:relative; padding-bottom:56.25%; height:0;">
+            <iframe id="youtubeIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
     <script>
         // --- TODO O JAVASCRIPT AQUI ---
 
@@ -493,46 +512,6 @@
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
                 faqItem.classList.toggle('active');
-            });
-        });
-
-        // NOVO SCRIPT: Galeria de Vídeos
-        document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.getElementById('video-gallery');
-            const leftBtn = document.querySelector('.gallery-control.left');
-            const rightBtn = document.querySelector('.gallery-control.right');
-            const thumbnails = document.querySelectorAll('.video-thumbnail');
-            let currentIndex = 0;
-
-            function updateGalleryPosition() {
-                const thumbnailWidth = gallery.querySelector('.video-thumbnail').offsetWidth + 20; // Largura + gap
-                gallery.style.transform = `translateX(-${currentIndex * thumbnailWidth}px)`;
-            }
-
-            rightBtn.addEventListener('click', () => {
-                if (currentIndex < thumbnails.length - 3) { // -3 para manter 3 na tela
-                    currentIndex++;
-                    updateGalleryPosition();
-                }
-            });
-
-            leftBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateGalleryPosition();
-                }
-            });
-
-            // Abrir vídeo em um player (ex: Lightbox ou Modal)
-            thumbnails.forEach(thumb => {
-                thumb.addEventListener('click', () => {
-                    const videoId = thumb.getAttribute('data-video-id');
-                    // Aqui você adicionaria a lógica para abrir o vídeo
-                    // Exemplo: alert(`Abrindo vídeo: ${videoId}`);
-                    // Para um modal real, você criaria o modal em HTML/CSS e o exibiria com JS
-                    const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-                    // Criar e exibir um modal com um iframe apontando para videoUrl
-                });
             });
         });
 
@@ -671,6 +650,62 @@
 
         setInterval(updateCountdown, 1000);
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('video-gallery');
+    const leftBtn = document.querySelector('.gallery-control.left');
+    const rightBtn = document.querySelector('.gallery-control.right');
+    const thumbnails = document.querySelectorAll('.video-thumbnail');
+    const modal = document.getElementById('youtubeModal');
+    const iframe = document.getElementById('youtubeIframe');
+    const closeModal = document.getElementById('closeModal');
+    let currentIndex = 0;
+
+    function updateGalleryPosition() {
+        const thumbnailWidth = gallery.querySelector('.video-thumbnail').offsetWidth + 20; // Largura + gap
+        gallery.style.transform = `translateX(-${currentIndex * thumbnailWidth}px)`;
+    }
+
+    rightBtn.addEventListener('click', () => {
+        if (currentIndex < thumbnails.length - 3) { // -3 para manter 3 na tela
+            currentIndex++;
+            updateGalleryPosition();
+        }
+    });
+
+    leftBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateGalleryPosition();
+        }
+    });
+
+    // Abrir o vídeo no Modal ao clicar na thumbnail
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const videoId = thumb.getAttribute('data-video-id');
+            const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.src = videoUrl;
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Fechar o Modal
+    closeModal.addEventListener('click', () => {
+        iframe.src = '';
+        modal.style.display = 'none';
+    });
+
+    // Fechar clicando fora da moldura
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            iframe.src = '';
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
 
 </body>
 </html>
