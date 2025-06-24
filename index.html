@@ -12,6 +12,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Nunito', sans-serif;
@@ -56,9 +58,9 @@
     font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    color: #0c0b08;
+    color: #BFA17A;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra preta suave com leve blur */
           }
 
@@ -301,14 +303,30 @@
         color: red;
     }
 </style>
+<style>
+    @keyframes fadeRotateUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.aos-animate.fade-rotate-up {
+  animation: fadeRotateUp 1s ease-out forwards;
+}
+</style>
 </head>
 
 <body>
     <div class="container">
-        <h1>De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</h1>
-        <h2>Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar de Fogão!</h2>
+        <h1 data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">De Zero a R$ 1.000 por Semana com Brigadeiros Sem Fogo</h1>
+        <h2 data-aos="fade-down" data-aos-delay="1" data-aos-duration="1000" data-aos-anchor-placement="top-bottom" >Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar de Fogão!</h2>
 
-        <div class="video-container">
+        <div class="video-container" data-aos="fade-up" data-aos-delay="2" data-aos-duration="1000" data-aos-anchor-placement="top-bottom" >
      <script>
          (function() {
              var screenWidth = window.innerWidth;
@@ -340,15 +358,15 @@
          })();
      </script></div>
 
-        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
+        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button" data-aos="fade-up" data-aos-delay="600">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
         
-        <div class="banner">
+        <div class="banner" data-aos="fade-up" data-aos-delay="600">
              <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F" alt="Brigadeiros Gourmet">
         </div>
         <p>Você sonha em ter mais dinheiro para realizar seus desejos e dar uma vida melhor para sua família? Cansada de apertar o cinto todo mês e não ter dinheiro para nada?</p>
         <p>Apresento o ebook "De Zero a R$ 1.000 com Brigadeiros Sem Fogo", o guia completo e prático que vai te ensinar a transformar sua cozinha em um negócio lucrativo, mesmo que você nunca tenha feito um doce na vida!</p>
 
-        <h3>O que você vai aprender:</h3>
+        <h3 data-aos="fade-up" data-aos-delay="600">O que você vai aprender:</h3>
         <ul class="benefits-list">
             <li class="benefit-item">
                 <i class="material-icons">restaurant_menu</i>
@@ -372,10 +390,10 @@
             </li>
         </ul>
 
-        <div class="countdown-container">...</div>
+        <div class="countdown-container" data-aos="fade-up" data-aos-delay="600">...</div>
 
-        <h3>Veja um Pouco do Nosso Conteúdo</h3>
-        <div class="video-gallery-wrapper">
+        <h3 data-aos="fade-up" data-aos-delay="600">Veja um Pouco do Nosso Conteúdo</h3>
+        <div class="video-gallery-wrapper" data-aos="fade-up" data-aos-delay="600">
              <div class="video-gallery-container">
                 <div class="video-gallery" id="video-gallery">
                     <div class="video-thumbnail" data-video-id="dGESq9_CxVU"><img src="https://i.ytimg.com/vi/dGESq9_CxVU/hqdefault.jpg" alt="Dica de Embalagem"></div>
@@ -390,7 +408,7 @@
              <button class="gallery-control right"><i class="material-icons">chevron_right</i></button>
         </div>
         
-        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">QUERO GARANTIR MINHA VAGA AGORA!</a>
+        <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button" data-aos="fade-up" data-aos-delay="600">QUERO GARANTIR MINHA VAGA AGORA!</a>
 
         <div class="testimonials-container">
              <div class="testimonial">
@@ -715,6 +733,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,      // duração da animação (ms)
+    easing: 'ease-out',  // suavidade
+    once: true           // anima só na primeira vez
+  });
 </script>
 
 </body>
