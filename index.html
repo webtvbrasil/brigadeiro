@@ -176,6 +176,29 @@
         .gallery-control.right { right: -25px; }
         .gallery-control:hover { background-color: #000; }
 
+    .countdown-container {
+        margin: 30px auto;
+        color: #F5F1E8;
+        font-size: 1.2em;
+    }
+
+    .countdown-numbers {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .countdown-number {
+        background-color: #ffca28;
+        color: #3e2723;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
         /* NOVA SEÇÃO: Quebra de Objeções (Collapse/FAQ) */
         .faq-container {
             max-width: 90%;
@@ -275,7 +298,36 @@
         <h2>Descubra o Guia Definitivo para Conquistar sua Independência Financeira Vendendo Brigadeiros Gourmet Sem Precisar de Fogão!</h2>
 
         <div class="video-container">
-            </div>
+     <script>
+         (function() {
+             var screenWidth = window.innerWidth;
+             var script = document.createElement('script');
+             script.src = "https://autoplay.playermoney.com.br/java/video.js";
+             script.setAttribute('alias', '0dfb1109ef9e29');
+             script.setAttribute('controls', 'off');
+             script.setAttribute('colors', 'EF0682');
+             script.setAttribute('stats', 'none');
+             script.setAttribute('live', 'sim');
+ 
+
+             if (screenWidth >= 1280) {
+                 script.setAttribute('width', '900');
+                 script.setAttribute('height', '500');
+             } else if (screenWidth >= 1024) {
+                 script.setAttribute('width', '500');
+                 script.setAttribute('height', '400');
+             } else if (screenWidth >= 720) {
+                 script.setAttribute('width', '450');
+                 script.setAttribute('height', '300');
+             } else {
+                 script.setAttribute('width', '400');
+                 script.setAttribute('height', '200');
+             }
+ 
+
+             document.querySelector('.video-container').appendChild(script);
+         })();
+     </script></div>
 
         <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">SIM! EU QUERO COMEÇAR A FATURAR R$ 1.000 POR SEMANA!</a>
         
@@ -329,7 +381,29 @@
         
         <a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">QUERO GARANTIR MINHA VAGA AGORA!</a>
 
-        <div class="testimonials-container">...</div>
+        <div class="testimonials-container">
+             <div class="testimonial">
+                 <img src="https://i.pravatar.cc/150?u=a042581f4e200267041&utm_source=Maria+Silva" alt="Avatar">
+                 <strong>Maria Silva</strong>
+                 <p>"Com Brigadeiros Sem Fogo, finalmente consegui pagar minhas contas e ainda sobrou dinheiro para um presente!"</p>
+             </div>
+             <div class="testimonial">
+                 <img src="https://i.pravatar.cc/150?u=a042581f4e290267045&utm_source=João+Santos" alt="Avatar">
+                 <strong>João Santos</strong>
+                 <p>"Nunca imaginei que seria tão fácil ganhar dinheiro em casa. Recomendo a todos que precisam de uma renda extra!"</p>
+             </div>
+             <div class="testimonial">
+                 <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d&utm_source=Carla+Oliveira" alt="Avatar">
+                 <strong>Carla Oliveira</strong>
+                 <p>"Brigadeiros Sem Fogo mudou minha vida financeira. Agora tenho mais tempo para minha família e ainda ganho dinheiro!"</p>
+             </div>
+         </div>
+ 
+         <div class="bottom-image">
+             <img src="https://scontent.fnvt3-1.fna.fbcdn.net/v/t39.30808-6/508996279_10048056201955172_1758954095280526771_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=11uAQIi0JbUQ7kNvwGiJMa-&_nc_oc=AdkxnPX2S4Blu_hYDV8c7K9aipZCNwGNd6McYzRPXYyVwGp8Fw5T3Lq7MkVSEKTRDvE&_nc_zt=23&_nc_ht=scontent.fnvt3-1.fna&_nc_gid=ER0lmAxGM6Em_oRnbrRLPA&oh=00_AfP51W4FoHzE4mcr2hfY3SfWxH0JXuqkSUVbKJ8tlidxvQ&oe=685FA22F"
+                 alt="Brigadeiros Gourmet">
+         </div>
+     </div>
 
         <div class="faq-container">
             <h3>Ainda tem alguma dúvida?</h3>
@@ -351,11 +425,32 @@
             </div>
         </div>
 
-        <div class="chat-container">...</div>
-        
-        <div class="bottom-image">...</div>
+       
+         <div class="chat-container">
+             <div class="chat-messages" id="chat-messages">
+             </div>
+             <div class="chat-input">
+                 <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                 <button onclick="sendMessage()">Enviar</button>
+             </div>
+         </div>
 
-    </div><footer>...</footer>
+                <!-- Contador Regressivo -->
+        <div class="countdown-container">
+            🔥 Oferta Exclusiva Termina em: 🔥
+            <div class="countdown-numbers">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-number" id="seconds">00</span>
+            </div>
+        </div>
+        
+        <div class="bottom-image"><a href="https://pay.kiwify.com.br/YBPHV7l" class="cta-button">QUERO GARANTIR MINHA VAGA AGORA!</a>
+</div>
+
+    </div>
+    <footer>Aviso Legal: Este site não é afiliado, endossado ou patrocinado pelo Facebook™ ou Meta Platforms Inc. O Facebook™ é uma marca registrada de Meta Platforms, Inc. Todas as informações, conteúdos e ofertas presentes neste site são de responsabilidade exclusiva da nossa equipe e empresa. Não estamos vinculados de nenhuma forma a Meta, Facebook™, Instagram™ ou qualquer outra plataforma pertencente à Meta Platforms Inc.</footer>
     <div class="sale-notification">...</div>
 
     <script>
@@ -442,5 +537,140 @@
         });
 
     </script>
+
+    <script>
+        // Notificações de Vendas Fakes
+        const sales = [
+            "Maria Silva",
+            "João Santos",
+            "Ana Oliveira",
+            "Carlos Pereira",
+            "Juliana Souza"
+        ];
+
+        function showSaleNotification() {
+            const name = sales[Math.floor(Math.random() * sales.length)];
+            const notification = document.createElement("div");
+            notification.classList.add("sale-notification");
+            notification.innerHTML = `<strong>${name}</strong> acabou de adquirir! R$ 37,00`;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.add("show");
+            }, 100);
+
+            setTimeout(() => {
+                notification.classList.remove("show");
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 10000); // Aparece a cada 4 segundos
+        }
+
+        setInterval(showSaleNotification, 4000);
+
+        // Chat Fake
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const participants = [
+            { name: 'Alice Souza', avatar: 'https://i.pravatar.cc/150?u=a142581f4e200267041' },
+            { name: 'Bruno Alves', avatar: 'https://thispersondoesnotexist.com/' },
+            { name: 'Carla Silva', avatar: 'https://i.pravatar.cc/150?u=a042681f4e200267041' },
+            { name: 'Daniel Pereira', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267042' },
+            { name: 'Elisa Santos', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267055' },
+            { name: 'Fábio Oliveira', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267045' },
+            { name: 'Gabriela Rocha', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267046' },
+            { name: 'Henrique Costa', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267047' },
+            { name: 'Isabela Fernandes', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267048' },
+            { name: 'João Mendes', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267049' },
+            { name: 'Karina Gonçalves', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267050' },
+            { name: 'Lucas Tavares', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267051' },
+            { name: 'Mariana Vargas', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267052' },
+            { name: 'Nicolas Duarte', avatar: 'https://thispersondoesnotexist.com/' },
+            { name: 'Olivia Castro', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267053' },
+            { name: 'Pedro Rodrigues', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200215' },
+            { name: 'Quiteria Lemos', avatar: 'https://i.pravatar.cc/150?u=a042581f4e20026705' },
+            { name: 'Renato Vieira', avatar: 'https://i.pravatar.cc/150?u=a042581f4e20026751' },
+            { name: 'Sofia Melo', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267058' },
+            { name: 'Thiago Albuquerque', avatar: 'https://i.pravatar.cc/150?u=a042581f4e200267059' }
+        ];
+        const messages = [
+            'Estou adorando o curso!',
+            'Já fiz minha primeira venda hoje!',
+            'As receitas são incríveis!',
+            'Super recomendo para quem quer uma renda extra!',
+            'Muito fácil de seguir as dicas!',
+            'As embalagens fazem toda a diferença!',
+            'Estou aprendendo muito!',
+            'O suporte é excelente!',
+            'Finalmente encontrei algo que me dá prazer!',
+            'Já estou pensando em expandir meu negócio!',
+            'As redes sociais são uma ótima ferramenta!',
+            'Me sinto mais confiante agora!',
+            'As dicas de MEI foram muito úteis!',
+            'Nunca pensei que seria tão fácil!',
+            'Estou muito feliz com os resultados!',
+            'Valeu cada centavo!',
+            'Transformei minha cozinha em um negócio lucrativo!',
+            'A melhor decisão que tomei!',
+            'Recomendo a todos os meus amigos!',
+            'Brigadeiros sem fogo é a solução!',
+        ];
+
+        function addMessage(participant, message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.innerHTML = `
+                <img src="${participant.avatar}" alt="Avatar">
+                <div class="message-content"><strong>${participant.name}:</strong> ${message}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = chatInput.value;
+            if (message) {
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.classList.add('message');
+                userMessageDiv.innerHTML = `
+                    <img src="https://i.pravatar.cc/300" alt="Avatar">
+                    <div class="message-content"><strong>Você:</strong> ${message}</div>
+                `;
+                chatMessages.appendChild(userMessageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatInput.value = '';
+            }
+        }
+
+        setInterval(() => {
+            const randomParticipant = participants[Math.floor(Math.random() * participants.length)];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            addMessage(randomParticipant, randomMessage);
+        }, 2000);
+
+        // Contador Regressivo
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 1); // Adiciona 1 dia
+            targetDate.setHours(0, 0, 0, 0); // Define para meia-noite
+
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
 </body>
 </html>
